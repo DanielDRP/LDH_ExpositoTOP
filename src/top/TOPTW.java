@@ -39,10 +39,7 @@ public class TOPTW {
     }
     
     public boolean isDepot(int a) {
-        if(a > this.nodes) {
-            return true;
-        }
-        return false;
+        return a > this.nodes;
     }
 
     public double getDistance(int[] route) {
@@ -202,7 +199,6 @@ public class TOPTW {
         for (int i = 0; i < this.nodes; i++) {
             strings = new String[strings.length];
             int index = 0;
-            //strings[index++] = Integer.toString("" + i);
             strings[index++] = Integer.toString(i);
             strings[index++] = "" + this.x[i];
             strings[index++] = "" + this.y[i];

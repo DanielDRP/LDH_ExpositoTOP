@@ -283,7 +283,7 @@ public class TOPTWGRASP {
                         } else { validFinalInsertion = false; }
                     } else { validFinalInsertion = false; }
 
-                    if(validFinalInsertion==true) { // cliente, ruta, predecesor, coste
+                    if(validFinalInsertion) { // cliente, ruta, predecesor, coste
                         if(costInsertion < infoCandidate[3]) {
                             infoCandidate[0] = candidate; infoCandidate[1] = k; infoCandidate[2] = pre; infoCandidate[3] = costInsertion; infoCandidate[4] = this.solution.getProblem().getScore(candidate); // cliente, ruta, predecesor, coste, score
                         }
