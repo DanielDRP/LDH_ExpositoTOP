@@ -3,9 +3,34 @@
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classtop_1_1_t_o_p_t_w_reader_abad17029fc8928818483c5053dde0fa2}\label{classtop_1_1_t_o_p_t_w_reader_abad17029fc8928818483c5053dde0fa2} 
-static \mbox{\hyperlink{classtop_1_1_t_o_p_t_w}{TOPTW}} {\bfseries read\+Problem} (String file\+Path)
+static \mbox{\hyperlink{classtop_1_1_t_o_p_t_w}{TOPTW}} \mbox{\hyperlink{classtop_1_1_t_o_p_t_w_reader_abad17029fc8928818483c5053dde0fa2}{read\+Problem}} (String file\+Path)
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase para leer y cargar problemas de la clase \doxylink{classtop_1_1_t_o_p_t_w}{TOPTW} (Tiempo de Espera y Rutas de Transporte).
+
+Esta clase proporciona métodos para leer archivos que contienen la definición de un problema \doxylink{classtop_1_1_t_o_p_t_w}{TOPTW} y crear una instancia de la clase \doxylink{classtop_1_1_t_o_p_t_w}{TOPTW} a partir de los datos leídos. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtop_1_1_t_o_p_t_w_reader_abad17029fc8928818483c5053dde0fa2}\index{top.TOPTWReader@{top.TOPTWReader}!readProblem@{readProblem}}
+\index{readProblem@{readProblem}!top.TOPTWReader@{top.TOPTWReader}}
+\doxysubsubsection{\texorpdfstring{readProblem()}{readProblem()}}
+{\footnotesize\ttfamily \label{classtop_1_1_t_o_p_t_w_reader_abad17029fc8928818483c5053dde0fa2} 
+static \mbox{\hyperlink{classtop_1_1_t_o_p_t_w}{TOPTW}} top.\+TOPTWReader.\+read\+Problem (\begin{DoxyParamCaption}\item[{String}]{file\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Lee un problema \doxylink{classtop_1_1_t_o_p_t_w}{TOPTW} desde un archivo especificado por su ruta.
+
+Este método procesa el archivo de entrada, lee las coordenadas de los puntos de interés (POIs), los tiempos de servicio, las puntuaciones, los tiempos de disponibilidad y de vencimiento, y configura una instancia de la clase \doxylink{classtop_1_1_t_o_p_t_w}{TOPTW} con esta información.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & La ruta del archivo que contiene la descripción del problema \doxylink{classtop_1_1_t_o_p_t_w}{TOPTW}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una instancia de la clase \doxylink{classtop_1_1_t_o_p_t_w}{TOPTW} configurada con los datos leídos del archivo. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

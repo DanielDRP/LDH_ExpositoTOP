@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ExpositoTOP: top.TOPTWEvaluator Class Reference</title>
+<title>Exposito TOP: top.TOPTWEvaluator Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ExpositoTOP
+   <div id="projectname">Exposito TOP
    </div>
   </td>
  </tr>
@@ -98,16 +98,46 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6d0c45513c641c55b6e9c878ffd5f476" id="r_a6d0c45513c641c55b6e9c878ffd5f476"><td class="memItemLeft" align="right" valign="top"><a id="a6d0c45513c641c55b6e9c878ffd5f476" name="a6d0c45513c641c55b6e9c878ffd5f476"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>evaluate</b> (<a class="el" href="classtop_1_1_t_o_p_t_w_solution.html">TOPTWSolution</a> solution)</td></tr>
+<tr class="memitem:a6d0c45513c641c55b6e9c878ffd5f476" id="r_a6d0c45513c641c55b6e9c878ffd5f476"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d0c45513c641c55b6e9c878ffd5f476">evaluate</a> (<a class="el" href="classtop_1_1_t_o_p_t_w_solution.html">TOPTWSolution</a> solution)</td></tr>
 <tr class="separator:a6d0c45513c641c55b6e9c878ffd5f476"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:aa87e11d07ed8529d44fb83c50ac71615" id="r_aa87e11d07ed8529d44fb83c50ac71615"><td class="memItemLeft" align="right" valign="top"><a id="aa87e11d07ed8529d44fb83c50ac71615" name="aa87e11d07ed8529d44fb83c50ac71615"></a>
 static double&#160;</td><td class="memItemRight" valign="bottom"><b>NO_EVALUATED</b> = -1.0</td></tr>
+<tr class="memdesc:aa87e11d07ed8529d44fb83c50ac71615"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valor constante para indicar que la solución no ha sido evaluada. <br /></td></tr>
 <tr class="separator:aa87e11d07ed8529d44fb83c50ac71615"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Clase para evaluar la solución de un problema de Team Orienteering con Ventanas de Tiempo (<a class="el" href="classtop_1_1_t_o_p_t_w.html">TOPTW</a>). </p>
+<p>Proporciona un método para calcular el valor de la función objetivo de una solución, evaluando la distancia acumulativa entre los nodos de cada ruta generada. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6d0c45513c641c55b6e9c878ffd5f476" name="a6d0c45513c641c55b6e9c878ffd5f476"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d0c45513c641c55b6e9c878ffd5f476">&#9670;&#160;</a></span>evaluate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void top.TOPTWEvaluator.evaluate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtop_1_1_t_o_p_t_w_solution.html">TOPTWSolution</a></td>          <td class="paramname"><span class="paramname"><em>solution</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Evalúa la solución dada, calculando el valor de la función objetivo. </p>
+<p>Este método está diseñado para calcular la distancia acumulativa entre nodos de cada ruta, sumando las distancias desde y hacia el depósito en cada iteración. </p>
+<p>Nota: Este método está actualmente comentado.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">solution</td><td>La solución de <a class="el" href="classtop_1_1_t_o_p_t_w.html">TOPTW</a> que se desea evaluar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>C:/Users/Dani/LDH/P3/ExpositoTOP/src/top/<b>TOPTWEvaluator.java</b></li>
 </ul>

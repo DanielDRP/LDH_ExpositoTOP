@@ -9,8 +9,7 @@ int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classes_1_1ull_1_1esit_1_1utilities_1_1
 \item 
 int \mbox{\hyperlink{classes_1_1ull_1_1esit_1_1utilities_1_1_bellman_ford_a4bad6103ccc407601545e7b8efa924ab}{get\+Value}} ()
 \item 
-\Hypertarget{classes_1_1ull_1_1esit_1_1utilities_1_1_bellman_ford_a250f4ed361209a7bed3bdc12010b3d3c}\label{classes_1_1ull_1_1esit_1_1utilities_1_1_bellman_ford_a250f4ed361209a7bed3bdc12010b3d3c} 
-void {\bfseries solve} ()
+void \mbox{\hyperlink{classes_1_1ull_1_1esit_1_1utilities_1_1_bellman_ford_a250f4ed361209a7bed3bdc12010b3d3c}{solve}} ()
 \end{DoxyCompactItemize}
 
 
@@ -19,15 +18,17 @@ void {\bfseries solve} ()
 \index{BellmanFord@{BellmanFord}!es.ull.esit.utilities.BellmanFord@{es.ull.esit.utilities.BellmanFord}}
 \doxysubsubsection{\texorpdfstring{BellmanFord()}{BellmanFord()}}
 {\footnotesize\ttfamily \label{classes_1_1ull_1_1esit_1_1utilities_1_1_bellman_ford_a3d5fd98d4098ebe439fd5ad9f79602ea} 
-es.\+ull.\+esit.\+utilities.\+Bellman\+Ford.\+Bellman\+Ford (\begin{DoxyParamCaption}\item[{int}]{distance\+Matrix}{\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }\item[{int}]{nodes}{, }\item[{Array\+List$<$ Integer $>$}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+es.\+ull.\+esit.\+utilities.\+Bellman\+Ford.\+Bellman\+Ford (\begin{DoxyParamCaption}\item[{int}]{distance\+Matrix}{\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }\item[{int}]{nodes}{, }\item[{Array\+List$<$ Integer $>$}]{path}{}\end{DoxyParamCaption})}
+
+Constructor de la clase \doxylink{classes_1_1ull_1_1esit_1_1utilities_1_1_bellman_ford}{Bellman\+Ford}.
 
 
 \begin{DoxyParams}{Parameters}
-{\em distance\+Matrix} & \\
+{\em distance\+Matrix} & Matriz de distancias que representa el grafo. \\
 \hline
-{\em nodes} & \\
+{\em nodes} & Número de nodos en el grafo. \\
 \hline
-{\em path} & \\
+{\em path} & Lista para almacenar el camino más corto calculado. \\
 \hline
 \end{DoxyParams}
 
@@ -37,21 +38,31 @@ es.\+ull.\+esit.\+utilities.\+Bellman\+Ford.\+Bellman\+Ford (\begin{DoxyParamCap
 \index{getDistances@{getDistances}!es.ull.esit.utilities.BellmanFord@{es.ull.esit.utilities.BellmanFord}}
 \doxysubsubsection{\texorpdfstring{getDistances()}{getDistances()}}
 {\footnotesize\ttfamily \label{classes_1_1ull_1_1esit_1_1utilities_1_1_bellman_ford_afdc1a955ba8f201e6ed6860965e19bf2} 
-int\mbox{[}$\,$\mbox{]} es.\+ull.\+esit.\+utilities.\+Bellman\+Ford.\+get\+Distances (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+int\mbox{[}$\,$\mbox{]} es.\+ull.\+esit.\+utilities.\+Bellman\+Ford.\+get\+Distances (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtiene las distancias mínimas desde el nodo inicial hasta cada nodo.
 
 \begin{DoxyReturn}{Returns}
-
+Arreglo de distancias mínimas. 
 \end{DoxyReturn}
 \Hypertarget{classes_1_1ull_1_1esit_1_1utilities_1_1_bellman_ford_a4bad6103ccc407601545e7b8efa924ab}\index{es.ull.esit.utilities.BellmanFord@{es.ull.esit.utilities.BellmanFord}!getValue@{getValue}}
 \index{getValue@{getValue}!es.ull.esit.utilities.BellmanFord@{es.ull.esit.utilities.BellmanFord}}
 \doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
 {\footnotesize\ttfamily \label{classes_1_1ull_1_1esit_1_1utilities_1_1_bellman_ford_a4bad6103ccc407601545e7b8efa924ab} 
-int es.\+ull.\+esit.\+utilities.\+Bellman\+Ford.\+get\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+int es.\+ull.\+esit.\+utilities.\+Bellman\+Ford.\+get\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Obtiene el valor del camino más corto calculado.
 
 \begin{DoxyReturn}{Returns}
-
+Valor del camino más corto. 
 \end{DoxyReturn}
+\Hypertarget{classes_1_1ull_1_1esit_1_1utilities_1_1_bellman_ford_a250f4ed361209a7bed3bdc12010b3d3c}\index{es.ull.esit.utilities.BellmanFord@{es.ull.esit.utilities.BellmanFord}!solve@{solve}}
+\index{solve@{solve}!es.ull.esit.utilities.BellmanFord@{es.ull.esit.utilities.BellmanFord}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily \label{classes_1_1ull_1_1esit_1_1utilities_1_1_bellman_ford_a250f4ed361209a7bed3bdc12010b3d3c} 
+void es.\+ull.\+esit.\+utilities.\+Bellman\+Ford.\+solve (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+Método que ejecuta el algoritmo de Bellman-\/\+Ford para encontrar el camino más corto desde el nodo inicial hasta el nodo final. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

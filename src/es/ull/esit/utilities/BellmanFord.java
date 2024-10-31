@@ -5,43 +5,51 @@ import java.util.ArrayList;
 public class BellmanFord {
 
     /**
-     *
+     * Constante que representa el valor de infinito utilizado en el algoritmo.
      */
     private static final int INFINITY = 999999;
+
     /**
-     *
+     * Matriz de distancias que representa el grafo ponderado.
      */
     private final int[][] distanceMatrix;
+
     /**
-     *
+     * Lista de nodos de origen para cada arista en el grafo.
      */
     private ArrayList<Integer> edges1 = null;
+
     /**
-     *
+     * Lista de nodos de destino para cada arista en el grafo.
      */
     private ArrayList<Integer> edges2 = null;
+
     /**
-     *
+     * Número de nodos en el grafo.
      */
     private final int nodes;
+
     /**
-     *
+     * Lista que almacena el camino más corto desde el nodo inicial hasta el nodo final.
      */
     private final ArrayList<Integer> path;
+
     /**
-     *
+     * Arreglo de distancias mínimas desde el nodo inicial hasta cada nodo.
      */
     private int[] distances = null;
+
     /**
-     *
+     * Valor del camino más corto encontrado por el algoritmo.
      */
     private int value;
 
     /**
+     * Constructor de la clase BellmanFord.
      *
-     * @param distanceMatrix
-     * @param nodes
-     * @param path
+     * @param distanceMatrix Matriz de distancias que representa el grafo.
+     * @param nodes Número de nodos en el grafo.
+     * @param path Lista para almacenar el camino más corto calculado.
      */
     public BellmanFord(int[][] distanceMatrix, int nodes, ArrayList<Integer> path) {
         this.distanceMatrix = distanceMatrix;
@@ -52,7 +60,7 @@ public class BellmanFord {
     }
 
     /**
-     *
+     * Método privado que calcula las aristas del grafo basándose en la matriz de distancias.
      */
     private void calculateEdges() {
         this.edges1 = new ArrayList<>();
@@ -68,23 +76,26 @@ public class BellmanFord {
     }
 
     /**
+     * Obtiene las distancias mínimas desde el nodo inicial hasta cada nodo.
      *
-     * @return
+     * @return Arreglo de distancias mínimas.
      */
     public int[] getDistances() {
         return this.distances;
     }
 
     /**
+     * Obtiene el valor del camino más corto calculado.
      *
-     * @return
+     * @return Valor del camino más corto.
      */
     public int getValue() {
         return this.value;
     }
 
     /**
-     *
+     * Método que ejecuta el algoritmo de Bellman-Ford para encontrar el camino más corto
+     * desde el nodo inicial hasta el nodo final.
      */
     public void solve() {
         int numEdges = this.edges1.size();

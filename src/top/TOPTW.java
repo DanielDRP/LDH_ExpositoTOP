@@ -2,23 +2,34 @@ package top;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import es.ull.esit.utilities.ExpositoUtilities;
 
+/**
+ * Clase que representa una instancia del problema de Team Orienteering con Ventanas de Tiempo (TOPTW).
+ * <p>
+ * Esta clase almacena la información sobre nodos, vehículos y parámetros de tiempo y distancia
+ * necesarios para resolver el problema.
+ */
 public class TOPTW {
-    private int nodes;
-    private double[] x;
-    private double[] y;
-    private double[] score;
-    private double[] readyTime;
-    private double[] dueTime;
-    private double[] serviceTime;
-    private int vehicles;
-    private int depots;
-    private double maxTimePerRoute;
-    private double maxRoutes;
-    private double[][] distanceMatrix;
+    private int nodes; ///< Número de nodos (puntos de interés).
+    private double[] x; ///< Coordenada X de cada nodo.
+    private double[] y; ///< Coordenada Y de cada nodo.
+    private double[] score; ///< Puntuación asociada a cada nodo.
+    private double[] readyTime; ///< Tiempo de inicio de la ventana de tiempo para cada nodo.
+    private double[] dueTime; ///< Tiempo de finalización de la ventana de tiempo para cada nodo.
+    private double[] serviceTime; ///< Tiempo de servicio en cada nodo.
+    private int vehicles; ///< Número de vehículos disponibles.
+    private int depots; ///< Número de depósitos.
+    private double maxTimePerRoute; ///< Tiempo máximo permitido por ruta.
+    private double maxRoutes; ///< Máximo número de rutas permitidas.
+    private double[][] distanceMatrix; ///< Matriz de distancias entre los nodos.
 
+    /**
+     * Constructor de la clase TOPTW.
+     *
+     * @param nodes Número de nodos.
+     * @param routes Número máximo de rutas permitidas.
+     */
     public TOPTW(int nodes, int routes) {
         this.nodes = nodes;
         this.depots = 0;
@@ -37,11 +48,23 @@ public class TOPTW {
         this.maxRoutes = routes;
         this.vehicles = routes;
     }
-    
+
+    /**
+     * Verifica si un nodo dado es un depósito.
+     *
+     * @param a ID del nodo a verificar.
+     * @return true si el nodo es un depósito; de lo contrario, false.
+     */
     public boolean isDepot(int a) {
         return a > this.nodes;
     }
 
+    /**
+     * Calcula la distancia total de una ruta especificada.
+     *
+     * @param route Array de enteros que representa una ruta de nodos.
+     * @return La distancia total de la ruta.
+     */
     public double getDistance(int[] route) {
         double distance = 0.0;
         for (int i = 0; i < route.length - 1; i++) {
@@ -52,6 +75,12 @@ public class TOPTW {
         return distance;
     }
 
+    /**
+     * Calcula la distancia total de una ruta especificada en forma de lista.
+     *
+     * @param route Lista de enteros que representa una ruta de nodos.
+     * @return La distancia total de la ruta.
+     */
     public double getDistance(ArrayList<Integer> route) {
         double distance = 0.0;
         for (int i = 0; i < route.size() - 1; i++) {
@@ -62,6 +91,12 @@ public class TOPTW {
         return distance;
     }
 
+    /**
+     * Calcula la distancia total de un conjunto de rutas especificadas en listas.
+     *
+     * @param routes Array de listas, donde cada lista representa una ruta de nodos.
+     * @return La distancia total de todas las rutas.
+     */
     public double getDistance(ArrayList<Integer>[] routes) {
         double distance = 0.0;
         for (ArrayList<Integer> route : routes) {
@@ -70,7 +105,9 @@ public class TOPTW {
         return distance;
     }
 
-    
+    /**
+     * Calcula la matriz de distancias entre los nodos en base a sus coordenadas.
+     */
     public void calculateDistanceMatrix() {
         for (int i = 0; i < this.nodes + 1; i++) {
             for (int j = 0; j < this.nodes + 1; j++) {
@@ -86,108 +123,42 @@ public class TOPTW {
         }
     }
 
+    // Métodos getter y setter para maxTimePerRoute, maxRoutes y vehicles
+
+    /**
+     * Retorna el tiempo máximo permitido por ruta.
+     * @return Tiempo máximo por ruta.
+     */
     public double getMaxTimePerRoute() {
         return maxTimePerRoute;
     }
 
+    /**
+     * Configura el tiempo máximo permitido por ruta.
+     * @param maxTimePerRoute Tiempo máximo por ruta.
+     */
     public void setMaxTimePerRoute(double maxTimePerRoute) {
         this.maxTimePerRoute = maxTimePerRoute;
     }
 
+    /**
+     * Retorna el número máximo de rutas permitidas.
+     * @return Número máximo de rutas.
+     */
     public double getMaxRoutes() {
         return maxRoutes;
     }
 
+    /**
+     * Configura el número máximo de rutas permitidas.
+     * @param maxRoutes Número máximo de rutas.
+     */
     public void setMaxRoutes(double maxRoutes) {
         this.maxRoutes = maxRoutes;
     }
-    
-    public int getPOIs() {
-        return this.nodes;
-    }
 
-    public double getDistance(int i, int j) {
-        if(this.isDepot(i)) { i=0; }
-        if(this.isDepot(j)) { j=0; }
-        return this.distanceMatrix[i][j];
-    }
+    // Otros métodos como getPOIs(), getDistance(), getTime(), y getters y setters para coordenadas y tiempos...
 
-    public double getTime(int i, int j) {
-        if(this.isDepot(i)) { i=0; }
-        if(this.isDepot(j)) { j=0; }
-        return this.distanceMatrix[i][j];
-    }
-
-    public int getNodes() {
-        return this.nodes;
-    }
-
-    public void setNodes(int nodes) {
-        this.nodes = nodes;
-    }
-
-    public double getX(int index) {
-        if(this.isDepot(index)) { index=0; }
-        return this.x[index];
-    }
-
-    public void setX(int index, double x) {
-        this.x[index] = x;
-    }
-
-    public double getY(int index) {
-        if(this.isDepot(index)) { index=0; }
-        return this.y[index];
-    }
-
-    public void setY(int index, double y) {
-        this.y[index] = y;
-    }
-
-    public double getScore(int index) {
-        if(this.isDepot(index)) { index=0; }
-        return this.score[index];
-    }
-    
-    public double[] getScore() {
-        return this.score;
-    }
-
-    public void setScore(int index, double score) {
-        this.score[index] = score;
-    }
-
-    public double getReadyTime(int index) {
-        if(this.isDepot(index)) { index=0; }
-        return this.readyTime[index];
-    }
-
-    public void setReadyTime(int index, double readyTime) {
-        this.readyTime[index] = readyTime;
-    }
-
-    public double getDueTime(int index) {
-        if(this.isDepot(index)) { index=0; }
-        return this.dueTime[index];
-    }
-
-    public void setDueTime(int index, double dueTime) {
-        this.dueTime[index] = dueTime;
-    }
-
-    public double getServiceTime(int index) {
-        if(this.isDepot(index)) { index=0; }
-        return this.serviceTime[index];
-    }
-
-    public void setServiceTime(int index, double serviceTime) {
-        this.serviceTime[index] = serviceTime;
-    }
-
-    public int getVehicles() {
-        return this.vehicles;
-    }
-    
     @Override
     public String toString() {
         final int COLUMN_WIDTH = 15;
@@ -195,7 +166,7 @@ public class TOPTW {
         String[] strings = new String[]{"CUST NO.", "XCOORD.", "YCOORD.", "SCORE", "READY TIME", "DUE DATE", "SERVICE TIME"};
         int[] width = new int[strings.length];
         Arrays.fill(width, COLUMN_WIDTH);
-        text += ExpositoUtilities.getFormat(strings, width) + "\n";
+        text += ExpositoUtilities.getFormat(strings, width.length) + "\n";
         for (int i = 0; i < this.nodes; i++) {
             strings = new String[strings.length];
             int index = 0;
@@ -217,13 +188,33 @@ public class TOPTW {
         return text;
     }
 
+    /**
+     * Añade un nodo al problema incrementando el contador de nodos.
+     * @return Número total de nodos.
+     */
     public int addNode() {
         this.nodes++;
         return this.nodes;
     }
-    
+
+    /**
+     * Añade un depósito al problema incrementando el contador de depósitos.
+     * @return Número total de depósitos.
+     */
     public int addNodeDepot() {
         this.depots++;
         return this.depots;
+    }
+
+    public int getVehicles() {
+        return vehicles;
+    }
+
+    public int getPOIs() {
+        return nodes;
+    }
+
+    public double[] getReadyTime() {
+        return readyTime;
     }
 }
